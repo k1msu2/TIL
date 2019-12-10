@@ -15,14 +15,14 @@ public class MethodLab4 {
 	
 	static int maxNumArray(int[] arr) {
 		
-		int max = arr[0] ;
+		int max = 0 ;
 		
 		for(int i = 0 ; i < arr.length-1;i++)
 		{
 			
-			if(max < arr[i+1])
+			if(max < arr[i])
 			{
-				max = arr[i+1];
+				max = arr[i];
 			}
 			
 		}
