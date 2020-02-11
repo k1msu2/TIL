@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+var ary = [10, 5, 21, 4, 8, 18];
+var sum = 0;
+
+for(var i in ary){
+	sum += ary[i];
+}
+document.writeln("<h1 style=\"font-size:"+ sum +"\">" + "모든 원소들의 합 : "+ sum + "</h1>" );
+
+var ary1 = ary.sort(function(a,b){return a-b});
+var min = ary1[0];
+var max = ary1[ary.length-1];
+
+document.writeln("<ul> - 최소값 : " + min + "</ul>");
+document.writeln("<ul> - 최대값 : " + max + "</ul>");
+</script>
+</body>
+</html>

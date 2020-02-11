@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+* {
+	margin:0px;
+}
+
+header{
+	background-image : linear-gradient(-45deg, pink,orange, yellow);
+	width:100%;
+	text-align:center;
+	color:purple;
+	padding:20px 0 0;
+	margin-bottom:10px;
+	
+}
+
+h1{
+	text-shadow: 2px 2px white;
+	margin:30px;
+	
+}
+
+nav{
+	font-size: 50%;
+	padding-bottom: 5px;
+}
+
+a{
+	text-decoration:none;
+	margin:25px;
+}
+
+a:hover{
+	font-weight: bold;
+}
+article{
+	border: 1px dotted magenta;
+  	border-radius: 15px;
+  	padding: 10px;
+  	margin:20px;
+  	margin-left: 50px;
+  	margin-right:50px;
+  	
+}
+
+img{
+	text-align:center;
+	
+}
+
+img:hover{
+	  opacity: 0.5;
+}
+
+figure{
+	text-align:center;
+}
+
+figcaption{
+	text-align:center;
+}
+
+aside{
+	margin:45px;
+	padding:50px;
+	width:80%;
+	text-align:center;
+}
+
+footer{
+	width:100%;
+	background-color:gray;
+	color:white;
+}
+
+table{
+	border-collapse:collapse;
+}
+
+:not(body) {opacity:1.0}
+</style>
+</head>
+<body>
+
+<header>
+<h1>HTML5학습</h1>
+
+<nav>
+<a href = "http://w3.org/"> W3C </a>
+<a href = "http://w3school.com/"> W3SCHOOLS </a>
+<a href = "https://jquery.com/"> jQuery </a>
+</nav>
+</header>
+
+<section>
+<article>
+<h2><span style="color:blue" >나의 소개 </span></h2>
+<ul>
+	<li>이름 : 김수이</li>
+	<li>별명 : 슝</li>
+	<li>관심기술 : 빅데이터</li>
+	<li>취미 : 영화 보기</li>
+</ul>
+</article>
+
+<article>
+<h2><span style="color:fuchsia">2019 재미있게 본 영화</span></h2>
+
+<table border="1" text-align="center">
+<tr><th>제목</th><th>장르</th></tr>
+<tr><td><a href="https://movie.naver.com/movie/bi/mi/mediaView.nhn?code=174903&mid=42940"><img src="1.jpg" width="50" ></a><br>엑시트</td><td>액션, 코미디</td></tr>
+<tr><td><a href="https://movie.naver.com/movie/bi/mi/mediaView.nhn?code=167651&mid=41133"><img src="2.jpg" width="50"></a><br>극한직업</td><td>코미디</td></tr>
+<tr><td><a href="https://movie.naver.com/movie/bi/mi/mediaView.nhn?code=167613&mid=43623"><img src="3.jpg" width="50"></a><br>조커</td><td>스릴러, 드라마</td></tr>
+<tr><td><a href="https://movie.naver.com/movie/bi/mi/mediaView.nhn?code=163788&mid=41880"><img src="4.jpg" width="50"></a><br>알라딘</td><td>판타지, 뮤지컬</td></tr>
+</table>
+
+</article>
+
+<article>
+
+<h2>자랑하고 싶은 우리동네의 <span style="color:orange">아름다운</span> 곳</h2>
+<p> 낙산공원은 서울의 대표적이 야경명소로서 멋진 성곽과 함께 서울 시내의 모습을 내려다 볼 수 있는 곳입니다.</p>
+<figure>
+<img src="view.jpg" width="80%">
+</figure>
+<figcaption> 낙산공원 야경 </figcaption> <br>
+</article>
+</section>
+
+<aside>
+<video src="video.mp4" width="100%" controls>
+</video>
+</aside>
+<footer>
+<em> 이 문서는 김 수이에 의해 HTML5 와 CSS3 기술을 사용하여 2020년 1월 3일에 작성하였습니다. (ver 1.0)</em>
+</footer>
+
+</body>
+</html>

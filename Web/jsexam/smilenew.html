@@ -1,0 +1,217 @@
+<html>
+
+<head>
+	<title>title</title>
+	<script>
+	var canvas;
+	var context;
+	var elem;
+
+	function drawCony(){
+	 elem=document.getElementById('canvas');
+	 canvas=elem.getContext('2d');	
+
+	  var x = 200;
+	  var y = 300;
+	
+	  canvas.beginPath();
+	  canvas.ellipse(x+30, y-100, 100, 25, Math.PI / 2, 0, 2 * Math.PI);
+	  canvas.strokeStyle = "black"; 
+	  canvas.stroke();
+
+
+	  canvas.beginPath();
+	  canvas.ellipse(x-30, y-100, 100, 25, Math.PI / 2, 0, 2 * Math.PI);
+	  canvas.strokeStyle = "black";
+	  canvas.stroke();
+
+	  canvas.beginPath();
+	  canvas.ellipse(x+30, y-100, 90, 15, Math.PI / 2, 0, 2 * Math.PI);
+	  canvas.strokeStyle = "pink";
+	  canvas.stroke();
+	  canvas.fillStyle = "pink";
+	  canvas.fill();
+
+	  canvas.beginPath();
+	  canvas.ellipse(x-30, y-100, 90, 15, Math.PI / 2, 0, 2 * Math.PI);
+	  canvas.strokeStyle = "pink";
+	  canvas.stroke();
+	  canvas.fillStyle = "pink";
+	  canvas.fill();
+
+	  canvas.beginPath();
+	  canvas.ellipse(x, y, 100, 120, Math.PI / 2, 0, 2 * Math.PI);
+	  canvas.strokeStyle = "black";
+	  canvas.stroke(); 
+	  canvas.fillStyle = "white";
+	  canvas.fill();
+
+	  canvas.beginPath();
+	  canvas.arc(x, y+10, 20, 0, Math.PI, false);
+	  canvas.strokeStyle = "black";
+	  canvas.stroke();
+	  canvas.fillStyle = "white";
+	  canvas.fill();
+	  canvas.stroke();
+
+	  canvas.beginPath();
+	  canvas.moveTo(x,y);
+	  canvas.lineTo(x, y+30);
+	  canvas.stroke();
+
+	  canvas.beginPath();
+	  canvas.ellipse(x, y, 7, 9, Math.PI / 2, 0, 2 * Math.PI);
+	  canvas.fillStyle = "white";
+	  canvas.fill(); 
+	  canvas.stroke();
+
+	  canvas.beginPath();
+	  canvas.ellipse(x-30, y, 7, 9, Math.PI / 2, 0, 2 * Math.PI);
+	  canvas.strokeStyle = "pink";
+	  canvas.stroke();
+	  canvas.fillStyle = "pink";
+	  canvas.fill();
+	  canvas.stroke();
+
+	  canvas.beginPath();
+	  canvas.ellipse(x+30, y, 7, 9, Math.PI / 2, 0, 2 * Math.PI);
+	  canvas.strokeStyle = "pink";
+	  canvas.stroke();
+	  canvas.fillStyle = "pink";
+	  canvas.fill();	   
+	  canvas.stroke();
+
+	  canvas.beginPath();
+	  canvas.arc(x-15, y-15,8,0,Math.PI*2, false);
+	  canvas.strokeStyle = "black";
+	  canvas.stroke();
+	  canvas.fillStyle = "black";
+	  canvas.fill();
+	  
+	  canvas.beginPath();
+	  canvas.arc(x+15, y-15,8,0,Math.PI*2, false);
+	  canvas.strokeStyle = "black";
+	  canvas.stroke();
+	  canvas.fillStyle = "black";
+	  canvas.fill();	
+	  
+	  x= 500;
+
+	  canvas.beginPath();
+	  canvas.ellipse(x+60, y-90, 25, 25, Math.PI / 2, 0, 2 * Math.PI);
+	  canvas.strokeStyle = "rgb(148, 90,70)"; 
+	  canvas.stroke();
+	  canvas.fillStyle = "rgb(148, 90,70)";
+	  canvas.fill();
+
+	  canvas.beginPath();
+	  canvas.ellipse(x-60, y-90, 25, 25, Math.PI / 2, 0, 2 * Math.PI);
+	  canvas.strokeStyle = "rgb(148, 90,70)";
+	  canvas.stroke();
+	  canvas.fillStyle = "rgb(148, 90,70)";
+	  canvas.fill();
+
+	  canvas.beginPath();
+	  canvas.ellipse(x+60, y-90, 15, 15, Math.PI / 2, 0, 2 * Math.PI);
+	  canvas.strokeStyle = "rgb(112, 68, 42)";
+	  canvas.stroke();
+	  canvas.fillStyle = "rgb(112, 68, 42)";
+	  canvas.fill();
+
+	  canvas.beginPath();
+	  canvas.ellipse(x-60, y-90, 15, 15, Math.PI / 2, 0, 2 * Math.PI);
+	  canvas.strokeStyle = "rgb(112, 68, 42)";
+	  canvas.stroke();
+	  canvas.fillStyle = "rgb(112, 68, 42)";
+	  canvas.fill();
+
+
+
+	  canvas.beginPath();
+	  canvas.ellipse(x, y, 100, 120, Math.PI / 2, 0, 2 * Math.PI);
+	  canvas.strokeStyle = "black";
+	  canvas.stroke(); 
+	  canvas.fillStyle = "rgb(148, 90,70)";
+	  canvas.fill();
+
+	  canvas.beginPath();
+	  canvas.arc(x-15, y-15,8,0,Math.PI*2, false);
+	  canvas.strokeStyle = "black";
+	  canvas.stroke();
+	  canvas.fillStyle = "black";
+	  canvas.fill();
+	  
+	  canvas.beginPath();
+	  canvas.arc(x+15, y-15,8,0,Math.PI*2, false);
+	  canvas.strokeStyle = "black";
+	  canvas.stroke();
+	  canvas.fillStyle = "black";
+	  canvas.fill();
+
+	  canvas.beginPath();
+	  canvas.ellipse(x, y+30, 30, 20, Math.PI / 2, 0, 2 * Math.PI);
+	  canvas.fillStyle = "rgb(236, 216,191)";
+	  canvas.fill(); 
+	  canvas.stroke();
+
+	  canvas.beginPath();
+	  canvas.ellipse(x, y+10, 7, 9, Math.PI / 2, 0, 2 * Math.PI);
+	  canvas.fillStyle = "black";
+	  canvas.fill(); 
+	  canvas.stroke();
+
+	  canvas.beginPath();
+	  canvas.moveTo(x, y+30);
+	  canvas.lineTo(x, y+10);
+	  canvas.stroke();
+
+	  canvas.beginPath();
+	  canvas.moveTo(x, y+30);
+	  canvas.lineTo(x-5, y+50);
+	  canvas.stroke();
+
+	  canvas.beginPath();
+	  canvas.moveTo(x, y+30);
+	  canvas.lineTo(x+5, y+50);
+	  canvas.stroke();
+
+	  
+	}
+	
+	function save() {
+		console.log('save');
+		alert(elem.toDataURL()); 
+		localStorage.setItem("canvas", elem.toDataURL());    
+	}
+
+	function remove(){
+		console.log('remove');
+		canvas.clearRect(0,0,580,450);
+	}
+
+	function restore() {
+		console.log('restore');
+		var img = new Image();
+		img.src = localStorage.getItem("canvas");
+		//로딩(디코딩)이 끝날때까지 기다렸다가, 로드 이벤트 처리를 해야함.
+		img.onload = function() {
+			canvas.drawImage(img, 0, 0);        
+		}
+	}
+	
+	window.addEventListener("load", drawCony, false);
+	</script>
+</head>
+
+<body>
+<button onclick="save();">Save</button>
+<button onclick="remove();">Clear</button> 
+<button onclick="restore();">Restore</button>
+ <section id="canvasbox">
+    <canvas id="canvas" width="800" height="600">
+      Your browser doesn't support the canvas element
+    </canvas>
+  </section>
+</body>
+
+</html>

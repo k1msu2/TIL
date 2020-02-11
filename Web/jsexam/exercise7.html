@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+function printH1(content){
+	document.write("<h1>" + content + "</h1>");
+}
+
+function printH4(content){
+	document.write("<h4>" + content + "</h4>");
+}
+
+function apply(p1, p2){
+	var flag = false;
+	if(Array.isArray(p1) && typeof p2 == 'function'){
+		for(var i = 0; i < p1.length; i++){
+			p2(p1[i]);
+		}
+		flag =  true;
+	}
+	else{
+		console.log("아규먼트 오류");
+		//flag = false;
+	}
+	return flag;
+	
+}
+
+var input;
+var ary = new Array();
+while(true){
+	input = window.prompt();
+	if(!input){
+		break;
+	}
+	//else{
+		ary.push(input);
+	//}	
+}
+
+var d = new Date().getDay();
+var ret;
+
+if(d==1 || d==3 || d==5){
+	ret = apply(ary, printH1);
+}
+else if(d==2 || d==4){
+	ret = apply(ary, printH4);
+}else if(d == 0){
+	ret = apply("ㅋㅋ", printH1);
+}else{
+	ret = apply(ary);
+}
+
+if(ret){
+	 window.alert("성공");
+}
+else{
+	 window.alert("실패"); 
+}
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+span {color : red}
+h2 { color : blue; }
+</style>
+</head>
+<body>
+<pre>
+<script>
+	var num1 = null, num2 = null, oper= null, result = null;
+	
+	while(true)
+	{
+
+		result=window.prompt("숫자 한개를 입력해주세요");
+		
+		if(isNaN(result) || result == '' || result == null) {
+			document.writeln("다시입력해주세요");
+		}
+		else
+		{
+			num1 = Number(result);
+			break;
+		}
+		
+		if(!result){
+			document.writeln("취소버튼을 누르셨습니다.");
+			break;
+		}	
+	}
+	
+	while(true)
+	{
+		result=window.prompt("숫자 한개를 입력해주세요");
+		
+		if(isNaN(result) || result == '' || result == null) {
+			document.writeln("다시입력해주세요");
+		}
+		else
+		{
+			num2 = Number(result);
+			break;
+		}		
+		
+		if(!result){
+			document.writeln("취소버튼을 누르셨습니다.");
+			break;
+		}	
+	}
+	
+	while(true)
+	{
+		result=window.prompt("+, -, *, /, % 중 한개의 연산자를 입력해주세요");
+		
+		if((oper != "+" && oper != "-" && oper != "*" && oper != "/" && oper != "%" )
+				&& result == '' || result == null) {
+			document.writeln("아무것도 입력하지 않았습니다.");
+		}
+		else{
+			oper = result;
+			break;
+		}
+		
+		if(!result){
+			document.writeln("취소버튼을 누르셨습니다.");
+			break;
+		}
+		
+		if(num1 != null && num2 != null && oper != null){
+			var result = null;
+			if(oper == "+")
+			{
+				result = num1 + num2;
+			}
+			else if(oper == "-")
+			{
+				result= num1 - num2;	
+			}
+			else if(oper == "*")
+			{
+				result= num1 * num2;	
+			}
+			else if(oper == "/")
+			{
+				result= num1 / num2;	
+			}
+			else if(oper == "%")
+			{
+				result= num1 % num2;	
+			}
+			else{
+				result= null;
+			}
+		}
+		document.writeln("<h2>" + num1 + oper + num2 + "=" + result + "</h2>");
+		break;
+	}
+
+
+
+</script>
+</pre>
+</body>
+</html>

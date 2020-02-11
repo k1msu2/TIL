@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<h2></h2>
+	<button id ="b1" value = "red">빨강색</button>
+	<button id ="b2" value = "blue">파랑색</button>
+	<button id ="b3" value = "yellow">노랑색</button>
+	
+	<script>
+	var date = new Date();
+	var dom = document.querySelector('h2');
+	dom.innerHTML = "오늘은 " + date.getFullYear() + "년 " + date.getMonth()+1 +"월 " + date.getDate() + "일 입니다. ";
+	
+	var bntList = document.querySelectorAll('button');
+	
+	console.log('1' + this); // window 객체 
+	
+	function func(e){
+		// 함수를 만들 떄는 아직 this가 윈도우객체인지 버튼 객체인지 알수 없다.
+		dom.style.color = this.value;
+		console.log('2' + this); // 버튼 객체
+	}
+	
+	bntList[0].addEventListener("click", func);
+	bntList[1].addEventListener("click", func);
+	bntList[2].addEventListener("click", func);
+
+	</script>
+</body>
+</html>

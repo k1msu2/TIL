@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<h2></h2>
+	<button id ="b1">빨강색</button>
+	<button id ="b2">파랑색</button>
+	<button id ="b3">노랑색</button>
+	
+	<script>
+	var date = new Date();
+	var dom = document.querySelector('h2');
+	dom.innerHTML = "오늘은 " + date.getFullYear() + "년 " + date.getMonth()+1 +"월 " + date.getDate() + "일 입니다. ";
+	
+	var dom_b1= document.querySelector('#b1');
+	var dom_b2= document.querySelector('#b2');
+	var dom_b3= document.querySelector('#b3');
+	
+	function f1(){
+		dom.style.color = "red";	
+	}
+	function f2(){
+		dom.style.color = "blue";	
+	}
+	function f3(){
+		dom.style.color = "yellow";	
+	}
+	
+	dom_b1.onclick = f1;
+	dom_b2.onclick = f2;
+	dom_b3.onclick = f3;
+	
+	</script>
+</body>
+</html>
+

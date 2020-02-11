@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+
+	var ary = new Array(10);
+
+	for(var i = 0; i <10; i++)
+	{
+		ary[i] = parseInt((Math.random()*50) + 1);
+		/* ary[i] = Math.floor(Math.random()*50+1) */
+	}
+	
+	document.write("정렬 전 :" + ary.toString() + "<br>");
+	ary.sort(function(a,b){return a-b});
+	document.write("정렬 후 :" + ary.toString() + "<br>");
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+
+<head>
+	<title>title</title>
+</head>
+
+<body>
+	<button id="openBtn">이미지 보이기</button>
+	<button id="closeBtn">이미지 숨기</button>
+	<div id="pic"></div>
+	<script>
+		var openbtn = document.getElementById('openBtn');
+		var closbtn = document.getElementById('closeBtn');
+		var p= document.getElementById('pic');
+		function openpic(){
+			p.innerHTML = "<img src= \"../images/duke_luau.png\" width=\"80%\">"
+			
+		}
+
+		function closepic(){
+			p.innerHTML = "<img src= \"\">"
+		}
+		openbtn.addEventListener("click", openpic);
+		closbtn.addEventListener("click", closepic);
+	</script>
+</body>
+
+</html>

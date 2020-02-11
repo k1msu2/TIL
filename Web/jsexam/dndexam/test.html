@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Drag and Drop</title>
+  <!-- <link rel="stylesheet" href="dragdrop.css"> -->
+  <script>
+
+		/*
+	function cropImage(image, croppingCoords) {
+    var cc = croppingCoords;
+    var workCan = document.createElement("canvas"); // create a canvas
+    workCan.width = Math.floor(cc.width);  // set the canvas resolution to the cropped image size
+    workCan.height = Math.floor(cc.height);
+    var ctx = workCan.getContext("2d");    // get a 2D rendering interface
+    ctx.drawImage(image, -Math.floor(cc.x), -Math.floor(cc.y)); // draw the image offset to place it correctly on the cropped region
+    image.src = workCan.toDataURL();       // set the image source to the canvas as a data URL
+    return image;
+		}
+
+	var image = new Image();
+	image.src = "‪C:/Users/student/Desktop/test.png"; // load the image
+	image.onload = function () {  // when loaded
+			cropImage(
+					this, {
+					x : this.width / 4,     // crop keeping the center
+					y : this.height / 4,
+					width : this.width / 2,
+					height : this.height / 2,
+			});
+			document.body.appendChild(this);  // Add the image to the DOM
+	};
+*/
+
+/*
+var img = new Image;
+img.onload = () => {
+
+  var canvas = document.getElementById('canvas');
+  canvas.width = img.width;
+  canvas.height = img.height;
+  var ctx = canvas.getContext('2d');
+  ctx.drawImage(img, 0, 0);
+
+  document.getElementById('button').addEventListener('click', ()=>{
+    autoCropCanvas(canvas, ctx);
+    document.getElementById('button').remove();
+  });
+
+};
+image.src = "../../images/cloud.png";
+
+
+function autoCropCanvas(canvas, ctx) {
+		var bounds = {
+			left: 0,
+			right: canvas.width,
+			top: 0,
+			bottom: canvas.height
+		};
+		var rows = [];
+		var cols = [];
+		var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+		for (var x = 0; x < canvas.width; x++) {
+			cols[x] = cols[x] || false;
+			for (var y = 0; y < canvas.height; y++) {
+				rows[y] = rows[y] || false;
+				const p = y * (canvas.width * 4) + x * 4;
+				const [r, g, b, a] = [imageData.data[p], imageData.data[p + 1], imageData.data[p + 2], imageData.data[p + 3]];
+				var isEmptyPixel = Math.max(r, g, b, a) === 0;
+				if (!isEmptyPixel) {
+					cols[x] = true;
+					rows[y] = true;
+				}
+			}
+		}
+		for (var i = 0; i < rows.length; i++) {
+			if (rows[i]) {
+				bounds.top = i ? i - 1 : i;
+				break;
+			}
+		}
+		for (var i = rows.length; i--; ) {
+			if (rows[i]) {
+				bounds.bottom = i < canvas.height ? i + 1 : i;
+				break;
+			}
+		}
+		for (var i = 0; i < cols.length; i++) {
+			if (cols[i]) {
+				bounds.left = i ? i - 1 : i;
+				break;
+			}
+		}
+		for (var i = cols.length; i--; ) {
+			if (cols[i]) {
+				bounds.right = i < canvas.width ? i + 1 : i;
+				break;
+			}
+		}
+		var newWidth = bounds.right - bounds.left;
+		var newHeight = bounds.bottom - bounds.top;
+		var cut = ctx.getImageData(bounds.left, bounds.top, newWidth, newHeight);
+		canvas.width = newWidth;
+		canvas.height = newHeight;
+		ctx.putImageData(cut, 0, 0);
+	}
+	*/
+
+	window.onload = function(){
+		var canvas = document.getElementById('canvas');
+		//canvas.width = img.width;
+		//canvas.height = img.height;
+		var ctx = canvas.getContext('2d');
+		
+		var img = new Image();
+		img.onload = function(){
+			ctx.drawImage(img, 0, 0);
+			var cut = ctx.getImageData(0, 0, 100, 100);
+		};
+		img.src="../test.png"
+	};
+  </script>
+</head>
+<body>
+<canvas id="canvas" width="640" height="400"></canvas>
+<!-- <button id="button">crop canvas</button> -->
+</body>
+</html>

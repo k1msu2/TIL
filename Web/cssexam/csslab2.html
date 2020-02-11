@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+h1{
+	background-image : linear-gradient(45deg, yellow, green); 
+	text-align:center;
+	color:white;
+	padding:40px;
+	width:400px;
+	margin: 10px auto;
+	border-radius:10px;
+}
+
+.fruit{
+	text-align:center;
+	margin:10px auto;
+	padding:40px;
+}
+
+img{
+	width:200px;
+	height:200px;
+	border-style: solid;
+	border-width: 1px;
+	border-radius:10px;
+	border-color: lime;
+	box-shadow: 5px 10px lime;
+	margin-right : 10px;
+	
+}
+.first:hover{
+	transform:rotate(10deg);
+	transition:transform 2s;
+}
+.second:hover{
+	transform:rotate(-10deg);
+	transition:transform 2s;
+}
+</style>
+<body>
+
+<h1> <span style="color:hotpink">과일</span>의 <span style="color:orange">종류</span></h1>
+<hr style="height: 5px;
+    border: none;
+    background-image: linear-gradient(65deg, yellow, red, green)"/>
+<div class="fruit">
+	<div class="first_row">
+		<img src="r1.gif" class="first">
+		<img src="r2.gif" class="first">
+		<img src="r3.jpg" class="first">
+		<img src="r4.gif" class="first">
+	</div>
+	<br>
+	<div class="second_row">
+	<img src="r5.png" class="second">
+	<img src="r6.png" class="second">
+	<img src="r7.png" class="second">
+	<img src="r8.jpg" class="second">
+	</div>
+</div>
+</body>
+</html>
