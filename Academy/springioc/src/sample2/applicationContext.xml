@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- <bean> tag 갯수만큼 갖다 쓰던 안쓰던 객체 6개를 만든다  -->
+
+<!--아규먼트 없는 생성자  -->
+<bean id="foo0" class="sample2.Foo" scope="prototype"/> <!-- prototype/sigleton(default) -->
+
+<!-- Foo(String str) -->
+<bean id="foo1" class="sample2.Foo">
+	<constructor-arg value="XYZ"/>	
+</bean>
+
+<!-- Foo(String str, int n) -->
+<bean id="foo2" class="sample2.Foo">
+	<constructor-arg  value="ABC"/>
+	<constructor-arg  value="100"/>
+</bean>
+
+<!--Foo(String str, int n, boolean b)  -->
+<bean id="foo3" class="sample2.Foo">
+	<constructor-arg index="1"  type="int"  value="50"/>
+	<constructor-arg index="0"  type="java.lang.String" value="xyz"/>
+	<constructor-arg index="2"  type="boolean" value="true"/>
+</bean>
+
+<!-- Foo(Bar bar) -->
+<bean id="foo4" class="sample2.Foo">
+	<!--ref -->                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+	<constructor-arg ref="bar" />
+</bean>
+
+<!-- 아규먼트 없는 생성자  -->
+<bean id="bar"  class="sample2.Bar" />
+	
+</beans>
+
+
+
+
+
+
+
+

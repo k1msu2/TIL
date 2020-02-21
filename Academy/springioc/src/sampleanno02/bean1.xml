@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 테스트1 기본 빈 설정-->
+<!-- 
+<bean id="myFood" class="sampleanno02.MyFoodMgr">
+	<property name="favoriteFood" ref="favoriteFood"/>
+	<property name="unFavoriteFood" ref="unFavoriteFood"/>
+</bean>
+
+<bean id="favoriteFood" class="sampleanno02.Food" >
+	<property name="foodName" value="Bread"/>
+	<property name="foodPrice" value="1500"/>
+</bean>
+<bean id="unFavoriteFood" class="sampleanno02.Food" >
+	<property name="foodName" value="Noodle"/>
+	<property name="foodPrice" value="2500"/>
+</bean> -->
+
+<!-- 테스트2 -->
+
+<!-- constructor 방식으로 오토와이어링 해줘. -->
+<bean id="myFood" class="sampleanno02.MyFoodMgr" autowire="byName"/>
+
+<bean id="favoriteFood" class="sampleanno02.Food" >
+	<property name="foodName" value="Noodle"/>
+	<property name="foodPrice" value="2500"/>
+</bean>
+<bean id="unFavoriteFood" class="sampleanno02.Food" >	
+	<property name="foodName" value="Bread"/>
+	<property name="foodPrice" value="1500"/>
+</bean>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

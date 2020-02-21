@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script>
+
+	var rand = Math.floor(Math.random()*3+1);
+	var addr = ["http://www.daum.net", "http://www.naver.com", "http://www.google.com"];
+	var result = window.confirm(addr[rand-1] + "로 이동하시겠습니까?");
+
+	if(!result){
+		window.open('/edu/temp.html');
+	}else{
+		location.href = addr[rand-1];
+	}
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+
+<head>
+	<title>title</title>
+</head>
+
+<body>
+	<script>
+	document.write("<h1></h1>");
+	document.write("<div>test<p></p></div>")
+
+	var h = document.querySelector('h1');
+	var d = document.querySelector('div');
+	var p = document.querySelector('p');
+	
+	
+	var btns = "";
+	for(var i = 1; i <= 9; i++)
+	{
+		btns += "<button id= \"" + i + "\" style= \"margin:10px; border-radius:12px\">" + i + "´Ü </button>";
+	}
+	
+	h.innerHTML = btns;
+	h.style.textAlign = 'center';
+	h.style.margin = '40px';
+
+	function f(){
+		console.log("test");
+	}
+	
+	d.addEventListener("click", f);
+	
+	/* 
+	var b = document.querySelectorAll('button');	
+		for(var i = 0; i <b.length ; i++){
+		b[i].addEventListener("click", f);
+	 */
+
+</script>
+</body>
+
+
+</html>

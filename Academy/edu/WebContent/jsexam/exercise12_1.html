@@ -1,0 +1,39 @@
+<html>
+
+<head>
+	<title>title</title>
+</head>
+
+<body>
+<h1></h1>
+<p></p>
+</body>
+<script>
+	var h = document.querySelector('h1');
+	var p = document.querySelector('p');
+	
+	var btns = "";
+	for(var i = 1; i <= 9; i++)
+	{
+		btns += "<button id=\"btn\" onClick=\"f("+ i +");\" style= \"margin:10px; border-radius:12px\">" + i + "´Ü </button>";
+	}
+
+	var b = document.querySelector('#btn');
+
+	h.innerHTML = btns;
+	h.style.textAlign = 'center';
+	h.style.margin = '40px';
+	
+	function f(dan){
+		var result = "";
+			for(var i = 1; i <= 9; i++){
+				result+= dan + "x" + i + "=" + (dan*i) + "<br>";
+			}
+		p.innerHTML = result;
+		p.style.textAlign = 'center';
+	}
+
+
+
+</script>
+</html>

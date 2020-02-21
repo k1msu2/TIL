@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>exam5.html</title>
+<meta charset="utf-8" />
+<script src="d3.v3.min.js"></script>
+</head>
+<body>
+<h2>외부 파일 읽어오기</h2>
+<hr>
+자바스크립트 콘솔에서 확인하셩...
+<script>
+/* 
+오라클 디비 -> csv 로 저장 가능
+비동기 처리 방식 - 대부분의 api 동작방식
+*/
+d3.csv("cities.csv",function(data) {console.log(data[0].label)}); //배열
+d3.json("tweets.json",function(data) {console.log(data)});	// 자바스크립트 객체
+</script>
+</body>
+</html>

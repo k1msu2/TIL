@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+span { color : red; }
+</style>
+</head>
+<body>
+<pre>
+<script>
+	while(true)
+	{
+		var num=window.prompt("1~9까지의 숫자 한개를 입력해주세요");
+
+		if(!num)
+		{
+			document.writeln("취소버튼을 누르셨습니다.");
+			break;
+		}
+		
+		if(isNaN(num) || num == '' || num == null || num < 1 || num > 9) {
+			document.writeln(num + "을 입력하셨습니다. " + "<span>1~9까지의 숫자 한개</span>를 입력해 주세요!!!");
+		}
+		else{			
+			document.writeln("<h1>" + num + "단입니다." + "</h1>");
+			document.writeln("<hr>");
+			for(var i = 1; i <= 9; i++){
+				document.writeln(num + "x" + i + "=" + num*i);
+			}
+			break;
+		}
+	}
+	
+</script>
+</pre>
+</body>
+</html>

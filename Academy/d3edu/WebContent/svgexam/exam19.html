@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SVG학습</title>
+<style>
+*{
+width: 300px;
+}
+</style>
+</head>
+<body>
+<h1>배지에 곡선 표시</h1>
+<hr>
+<svg>
+
+<path
+d = "M 10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80"
+stroke = "#eb6e4c" fill = "none" stroke-width="6" stroke-linecap = "round"/>
+<circle cx="10"  cy="80"  r="2"/>
+<circle cx="40"  cy="10"  r="2"/>
+<circle cx="65"  cy="10"  r="2"/>
+<circle cx="95"  cy="80"  r="2"/>
+<circle cx="150"  cy="150"  r="2"/>
+<circle cx="180"  cy="80"  r="2"/>
+
+</svg>
+
+<hr>
+<svg>
+<circle cx="40"  cy="10"  r="2"/>
+<path 
+ d= "M 10 80 C 40 10, 65 10, 95 80"
+ stroke = "green" fill = "none" stroke-width="6" stroke-linecap = "round"/>
+ <circle cx="10"  cy="80"  r="2"/>
+<circle cx="40"  cy="10"  r="2"/>
+<circle cx="65"  cy="10"  r="2"/>
+<circle cx="95"  cy="80"  r="2"/>
+</svg>
+<hr>
+<svg>
+<path 
+d= "M 10 80 C 40 10, 150 150, 180 80"
+stroke="yellow" fill="none" stroke-width="6" stroke-linecap="round"/>
+<circle cx="10"  cy="80"  r="2"/>
+<circle cx="40"  cy="10"  r="2"/>
+<circle cx="150"  cy="150"  r="2"/>
+<circle cx="180"  cy="80"  r="2"/>
+</svg>
+<hr>
+
+
+</body>
+</html>

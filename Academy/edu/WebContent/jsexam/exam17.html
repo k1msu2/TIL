@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>아규먼트로 함수 전달하기(고차함수)</title>
+</head>
+<body>
+<script src = "util.js">
+
+</script>
+
+<h1> 아규먼트로 함수 전달하기(고차함수)</h1> 
+
+
+<script>
+	hr();
+	function output(p){
+		if(typeof p == 'function'){
+			p("ㅋㅋㅋㅋ");
+		}else{
+			document.write("<h2>ㅋㅋㅋ: " + p + "</h2>");
+		}
+	}
+	output("둘리");
+	output(function(param) {console.log(param);})
+	var myAlert = function(param){
+		window.alert(param);
+	}
+	output(myAlert);	// o 
+	//output(myAlert());	// x : 함수의 리턴값 undefined 가 전달되므로 
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+
+<head>
+	<title>title</title>
+</head>
+
+<body>
+	<script>
+		window.onload = function() {
+			document.getElementById("writeaddr").addEventListener("click", getData);
+		};
+		
+		function getData(){
+			var addrStr = prompt("주소를 입력하세요 ");
+			var authKey = "AIzaSyD8k2DWC_7yFHCrH6LDR3RfITsmWMEqC8c";
+			var queryStr = "https://maps.googleapis.com/maps/api/geocode/json?address="+ encodeURIComponent(addrStr) + "&key=" + authKey;
+			console.log(queryStr);
+			var request = new XMLHttpRequest();
+			request.onload = function(event) {
+				if (request.status == 200) {
+					var str = request.responseText;
+					var obj = JSON.parse(str);
+					console.log(obj.results);
+					var target = document.getElementById('result');
+					target.innerHTML = "변환된 위도와 경도 : " + obj.results[0].geometry.location.lat + ":"
+					+ obj.results[0].geometry.location.lng + "<br>";
+				}
+			};
+			request.open('GET', queryStr, true);
+			request.send();
+		
+		}
+
+	</script>
+
+	<h1>주소와 위도경도 변환 서비스</h1>
+	<hr>
+	<button id="writeaddr">주소입력</button>
+	<h2 id="result"></h2>
+	<div id="googleMap"></div>
+
+
+</body>
+
+</html>

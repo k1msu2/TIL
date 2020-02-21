@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+
+/* 생성자 함수는 빈객체에 데이터를 넣는다
+	function Student(p1, p2, p3, p4){
+		this.name = p1;
+		this.kor = p2;
+		this.eng = p3;
+		this.math = p4;
+	}
+*/
+function printObject(p){
+	
+	if(typeof p != 'object'){
+		return;
+	}
+	
+	
+/* this => Object 윈도우 객체는 아님 
+	this.tag = p.tag;
+	this.color = p.color;
+	this.msg = p.msg;
+	
+ */
+	this.tag = p.tag;
+	this.color = p.color;
+	this.msg = p.msg;
+
+	console.log('1' + this);
+}
+
+printObject.prototype.printMsg = function(){
+	console.log('2' + this);
+	document.write("<"+this.tag+" style='color:"+this.color+"'>"+
+			this.msg+"</"+this.tag+">");
+}
+
+var p1 = {'tag':'h1',
+		  'color':'red',
+		  'msg':'p1 test'};
+var p2 = {'tag':'h2',
+		  'color':'lime',
+		  'msg':'p2 test'};
+var p3 = {'tag':'h3',
+		  'color':'blue',
+		  'msg':'p3 test'};
+		  
+new printObject({'tag':'h1',
+	  'color':'red',
+	  'msg':'p1 test'}).printMsg();
+	  
+new printObject(p2).printMsg();
+new printObject(p3).printMsg();
+
+</script>
+</body>
+</html>

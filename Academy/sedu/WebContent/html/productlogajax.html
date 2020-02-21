@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		h1 {
+			text-align: center;
+			text-shadow: 1px;
+		}
+
+		img {
+			margin: 20px;
+			width: 180px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<h1 id="h1">2020.01 개봉영화</h1>
+	<hr>
+	<figure>
+		<div>
+			<img src="/sedu/images/movie2020/01.jpg" id="p001">
+			<img src="/sedu/images/movie2020/02.jpg" id="p002">
+			<img src="/sedu/images/movie2020/03.jpg" id="p003">
+			<img src="/sedu/images/movie2020/04.jpg" id="p004">
+			<img src="/sedu/images/movie2020/05.jpg" id="p005">
+
+			<div>
+				<img src="/sedu/images/movie2020/06.jpg" id="p006">
+				<img src="/sedu/images/movie2020/07.jpg" id="p007">
+				<img src="/sedu/images/movie2020/08.jpg" id="p008">
+				<img src="/sedu/images/movie2020/09.jpg" id="p009">
+				<img src="/sedu/images/movie2020/10.jpg" id="p010">
+			</div>
+	</figure>
+	<script>
+		window.onload = function () {
+			var images = document.querySelectorAll('img');
+			console.log(images.length);
+			for (var i = 0; i < images.length; i++) {
+				images[i].addEventListener("click", getData);
+			}
+		};
+
+		function getData(e) {
+			console.log("getdata호출")
+			// XMLHttpRequest()  - 서버에서 온 데이터 요청
+			var request = new XMLHttpRequest();
+			//request.onload = function(event) {  // 요청 완료만 잡아내도 될때 
+			requet.onreadystatechange = function (event) {
+				if (requet.readyState === requet.UNSENT) console.log('unsent');
+				if (requet.readyState === requet.OPENED) console.log('opened');
+				if (requet.readyState === requet.HEADERS_RECEIVED) console.log('headers received');
+				if (requet.readyState === requet.LOADING) console.log('loading');
+				if (request.status == 200) {
+					var str = request.responseText;
+					var obj = JSON.parse(str);
+					console.log(str);
+					console.log(obj.pid);
+					var target = document.getElementById('h1');
+					target.innerHTML = "<h1>" + obj.pid + "</h1>";
+				}
+			};
+			console.log(this.id);
+			request.open('GET', "http://localhost:8000/sedu/basket1?pid=" + this.id, true);
+			request.send();
+
+		}
+	</script>
+</body>
+
+</html>

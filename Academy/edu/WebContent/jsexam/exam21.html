@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>자바스크립트의 객체 생성과 사용(객체리터럴)</h1>
+<script src = "util.js"></script>
+
+<script>
+var obj = {
+		/* name-> 변수 , eat-> 메서드 */
+		name : "듀크", 
+		eat : function(food){
+			writeColor(this.name + "가 " + food + "를 먹어요", "h3", "green");
+			// 자바스크립트에서는 같은 객체안에 있는 멤버에 접근하려고 할때 this를 붙여줘야한다.
+			// name 일 경우, 윈도우 객체 안에서 찾는다
+		}
+}
+console.log("!!!");
+obj.eat("바나나");
+obj.eat("딸기");
+hr();
+writeColor(typeof obj, "h2", "red");
+
+// 자바와 다르게 객체멤버 생성후에도 객체멤버를 변경가능하다
+// 새로 추가한 변수 와 메서드
+obj.project = "자바스크립트";
+obj.study = function(){
+	writeColor(this.name + "가 " + this.project + "를 공부해요", "h3", "magenta");
+}
+
+obj.study();
+hr();
+
+// 자바와 다르게 아무객체나 받을 수 있다.
+// 변수 : obj.속성명(r-value 용도, l-value 용도), obj['속성명']
+// 메서드 : obj.속성명() -> 함수 호출 시에는 대괄호 사용 불가
+for(var key in obj){
+	write(key + ":" + obj[key], "h4"); //key라는 변수에 할당 된 값, 'key': key라는 속성을 가진 값
+}
+hr();
+write(obj.project, "h2");
+write(obj["project"], "h2");
+delete obj.study;
+hr();
+for(var key in obj){
+	write(key + ":" + obj[key], "h4"); //key라는 변수에 할당 된 값, 'key': key라는 속성을 가진 값
+}
+</script>
+
+</body>
+</html>

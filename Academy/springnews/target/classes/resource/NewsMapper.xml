@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="resource.NewsMapper">
+	<select id="selectNews" resultType="vo.NewsVO">
+		select id, writer, title, content, writedate, cnt from news order by id desc
+	</select>
+	<select id="selectNews1" parameterType="_int"
+		resultType="vo.NewsVO">
+		select id, writer, title, content, writedate, cnt from news where id = #{id}
+	</select>
+	<select id="searchNewsTitleAndContent" parameterType="java.util.Map"
+		resultType="vo.NewsVO">
+		select id, writer, title, content, writedate from news 
+		where ${searchtype} like '%'||#{key}||'%'
+	</select>
+	<select id="searchNewsAll" parameterType="string"
+		resultType="vo.NewsVO"> 
+		select id, writer, title, content, writedate, cnt from news where title like 
+		'%'||#{key}||'%' union select id, writer, title, content, writedate, cnt from news 
+		where content like '%'||#{key}||'%'
+	</select>
+	
+	<select id="searchNews1" parameterType="string" resultType="vo.NewsVO">
+		select id, writer, title, content, writedate, cnt from news where writer = #{writer} order by id
+	</select>
+	<delete id="deleteNews" parameterType="_int">
+		delete from news where id = #{id}
+	</delete>
+	<insert id="insertNews" parameterType="vo.NewsVO">
+		<selectKey resultType="int" keyProperty="id" order="BEFORE">
+			select news_seq.nextval from dual
+		</selectKey>
+		insert into news (id, writer, title, content, writedate, cnt) 
+		values (#{id}, #{writer}, #{title}, #{content}, sysdate, #{cnt})
+	</insert>
+	<update id="updateNews" parameterType="vo.NewsVO">
+		update news set writer = #{writer}, title = #{title}, content = #{content},
+		writedate = sysdate	where id = #{id}
+	</update>
+	<update id="updateNewsView" parameterType="_int">
+		update news set cnt = cnt + 1 where id = #{id}
+	</update>
+</mapper>

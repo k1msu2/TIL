@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>SVG로 그리기</title>
+		<script src="d3.v3.min.js"></script>
+		<style>
+		*{
+			width: 500px;
+			height:300px;
+		}
+		</style>
+	</head>
+	<body>
+		<h1>실습3</h1>
+		<div>
+			<svg >
+				<text x="25" y="40" font-size="24px" style="fill:black">SVG 텍스트 예제</text>
+				<text x="25" y="80" font-size="24px" font-family="바탕" style="fill:black">SVG 텍스트 예제</text>
+				<text x="25" y="120" font-size="24px" font-family="궁서" style="fill:black">SVG 텍스트 예제</text>
+			</svg>
+		</div>
+		<script>
+		var names = ["둘리", "또치", "도우너", "마이콜", "희동이"];
+		console.log(names);
+		d3.select('svg')
+		  .selectAll('text')
+		  .data(names)
+		  .text(function(d,i){return d})
+		  .enter()
+		  .append('text')
+		  .text(function(d,i){return d})
+		  .attr("x", 25)
+		  .attr("y", function(d, i) { return (i+1)*40})
+		  .attr("font-size", 24);
+		
+		</script>
+	</body>
+</html>

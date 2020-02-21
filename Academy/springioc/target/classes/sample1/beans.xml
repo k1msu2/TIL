@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--beans root tag -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- bean tag -->
+	<bean id="messageBean" class="sample1.MessageBeanImpl" >
+		<constructor-arg> <!-- 객체 생성할 때 아규먼트로 사용 /이게 없으면 아규먼트 없는 생성자 호출 -->
+			<value>strawberry</value>
+		</constructor-arg>	
+		<property name="cost">
+			<value>3000</value>
+		</property>
+	</bean>	
+</beans>
+
+
+
+
+
+

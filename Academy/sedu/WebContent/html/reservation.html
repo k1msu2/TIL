@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>visitorForm.html</title>
+</head>
+<body>
+	<h1> 펜션 예약 서비스 </h1>
+	<hr>
+	<form action="/sedu/jspexam/reservation.jsp" method="POST">
+		예약자명 : 
+		<input type="text" required name="id"><br/>
+		예약암호 : 
+		<input type="password" name="pw"><br/>
+		룸선택 : 
+		<input type="radio" name="room" value="둘리 ">둘리
+		<input type="radio" name="room" value="희동 ">희동
+		<input type="radio" name="room" value="도우너 ">도우너
+		<input type="radio" name="room" value="또치">또치
+		<br/>
+		추가요청사항:
+		<input type="checkbox" name="option" value="바베큐">바베큐
+		<input type="checkbox" name="option" value="수영장">수영장
+		<input type="checkbox" name="option" value="낚시">낚시
+		<input type="checkbox" name="option" value="조식">조식
+		<br/>
+		예약날짜 : 
+		<input type="date" name = "date">
+		<hr>
+		<input type="submit" value="보내기">
+		<input type="reset" value="다시작성하기">
+		
+	</form>
+</body>
+</html>

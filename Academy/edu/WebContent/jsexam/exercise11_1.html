@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2></h2>
+	<!-- this : 대상객체  -->
+	<!-- 이벤트핸들러함수가 아니라 그냥 일반 함수 , 이 함수 내부에 this는 윈도우 객체를 가리-->
+	<button onClick="f(this,'red');">빨강색</button>
+	<button onClick="f(this, 'blue');">파랑색</button>
+	<button onClick="f(this, 'yellow');">노랑색</button>
+	
+	<script>
+	var date = new Date();
+	var dom = document.querySelector('h2');
+	dom.innerHTML = "오늘은 " + date.getFullYear() + "년 " + date.getMonth()+1 +"월 " + date.getDate() + "일 입니다. ";
+/* 	function f1() {
+		dom.style.color = "red";		
+	}
+	function f2() {
+		dom.style.color = "blue";		
+	}
+	function f3() {
+		dom.style.color = "yellow";	} */
+
+	// 일반 함수 이다 
+	var old;
+	console.log('1' + this);
+	var f = function(me,color){
+		console.log('2' + this);
+		console.log('3' + me);
+		if(old){
+			old.style.backgroundColor = 'white';
+		}
+
+		dom.style.color = color;
+		me.style.backgroundColor = color;
+		old = me;
+	};
+		
+	</script>
+</body>
+</html>

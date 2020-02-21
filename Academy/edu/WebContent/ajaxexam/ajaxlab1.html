@@ -1,0 +1,31 @@
+<html>
+
+<head>
+	<title>title</title>
+</head>
+
+<body>
+	<h1>오늘의 날씨 정보</h1>
+	<hr>
+	<div id="time">	</div>
+</body>
+<script>
+window.onload = function() {
+		var request = new XMLHttpRequest();
+		request.onload = function(event) {
+			if (request.status == 200) {
+				var str = request.responseText;
+				var obj = JSON.parse(str);
+				//alert(obj);
+				var target = document.getElementById('time');
+				//alert(target);
+				target.innerHTML += "기준시간: " + obj.time +"<br/>";
+				target.innerHTML += "기온: " + obj.temp +"<br/>";
+				target.innerHTML += "<img src='../" + obj.img + "' width=80px >"
+			}
+		};
+		request.open('GET', 'content/weather.jsp', true);
+		request.send();
+};	
+</script>
+</html>

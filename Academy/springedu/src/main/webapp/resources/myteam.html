@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css?family=Do+Hyeon:400"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Gugi:400" rel="stylesheet">
+<style>
+* {
+	size: 20px;
+	font-family: "Gugi";
+}
+
+</style>
+<script>
+	function get(data){
+		var request = new XMLHttpRequest();
+		request.onload = function(event){
+			if(request.status == 200){
+				var str = request.responseText;
+				var team = JSON.parse(str);
+				console.log(team);
+				var target = document.getElementById('intro');
+				if(data == "teamName"){
+					target.innerHTML+= "<h3>"+team.teamName+"</h3>"
+				}else if(data == "teamMember"){
+					target.innerHTML+= "<h4>우리 팀원을 소개합니다.</h4>"
+					target.innerHTML+="<li>" + team.teamMember[0].name+"("+ team.teamMember[0].nicName +")" +"</li><br>";
+					target.innerHTML+="<li>" + team.teamMember[1].name+"("+ team.teamMember[1].nicName +")" +"</li><br>";
+					target.innerHTML+="<li>" + team.teamMember[2].name+"("+ team.teamMember[2].nicName +")" +"</li><br>";
+				}
+			}
+		};
+		request.open('GET', '/springedu/myteam/json', true);
+		request.send();
+	}
+</script>
+</head>
+<body>
+	<h1>우리팀 소개</h1>
+	<hr>
+	<button onclick="get('teamName')">우리 팀명</button>
+	<button onclick="get('teamMember')">우리 팀원</button>
+	<div id="intro">
+	</div>
+	<div>
+	<img src="/springedu/resources/images/javas.jfif" width=400px/>
+	</div>
+</body>
+</html>

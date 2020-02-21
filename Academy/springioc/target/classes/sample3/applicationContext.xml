@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 초기화 할때 객체 생성하지 않음 getbean 호출 할 때 마다 생성-->
+<bean id="userService" class="sample3.UserServiceImpl" 
+                                                    scope="prototype"/>
+                                                    
+ <!-- UserVo 는 미리 객체 생성됨 -->                                                   
+<bean id="obj1" class="sample3.UserVo">
+	<constructor-arg value="Dooly"/>	
+</bean>
+<bean id="obj2" class="sample3.UserVo">
+	<constructor-arg value="Duke"/>	
+</bean>
+</beans>

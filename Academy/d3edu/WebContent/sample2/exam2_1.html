@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>exam2.html</title>
+<meta charset="utf-8" />
+<script src="d3.v3.min.js"></script>
+</head>
+<body>
+<h2>enter(), exit() 의 기능을 확실히 이해하자!</h2>
+<!-- enter() : 데이터 > 태그 수  (태그 추가) -->
+<!-- exit() : 태그 수 > 데이터 수  (태그 삭제)-->
+<hr>
+<div>111</div>
+<div>222</div>
+<script>
+var binddiv = d3.select('body')
+.selectAll("div")
+.data(['aaa', 'bbb', 'ccc', 'ddd'])
+
+//바인딩 된 태그 호출
+binddiv.enter() // 플레이스 홀더
+.append('div') // div 요소 추가
+.text(function(d, i){return d+"-"+i})
+
+//기존 태그 호출
+binddiv.text(function(d, i){ return d+"-"+i})
+
+/* d3.select('body')
+    .selectAll("div")
+    .data(['aaa', 'bbb', 'ccc', 'ddd'])
+    .enter()
+    .append('div')
+    .text(function(d, i){return d +"-"+i}) */
+</script>
+</body>
+</html>
