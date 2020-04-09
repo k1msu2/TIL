@@ -1,0 +1,45 @@
+int main() {
+	int h, w, m, n;
+	cin >> h >> w;
+
+	vector<vector<int>> a(h+1, vector<int>(w+1));
+	vector<vector<int>> dy(h+1, vector<int>(w+1));
+
+	for (int i = 1; i <= h; i++) {
+		for (int j = 1; j <= w; j++) {
+			scanf_s("%d",&a[i][j]);
+		}
+	}
+	cin >> n >> m;
+	int max = 0;
+	for (int i = 1; i <= h; i++) {
+		for (int j = 1; j <= w; j++) {
+			dy[i][j] = dy[i][j - 1] + dy[i - 1][j]
+				- dy[i - 1][j - 1] + a[i][j];
+			//cout << dy[i][j] <<" ";
+		}
+		//cout << endl;
+	}
+	int res = 0;
+	for (int i = 1; i <= h - n; i++) {
+		for (int j = 1; j <= w - m; j++) {
+			res = dy[i + n - 1][j + m - 1] - dy[i-1][j+m-1]
+				- dy[i+n-1][j-1] + dy[i-1][j-1];
+			//cout << i + n - 1 << " " << j + m - 1  << endl;
+			//cout << res << "(" << 
+			//	dy[i + n - 1][j + m-1] <<
+			//	"-" << dy[i - 1][j + m - 1] <<
+			//	"-" <<dy[i + n - 1][j - 1] <<"+" <<
+			//	dy[i - 1][j - 1] <<	") " << endl;
+			if (max < res) {
+				max = res;
+			}
+		}
+		//cout << endl;
+	}
+
+	cout << max;
+	
+
+	return 0;
+}
