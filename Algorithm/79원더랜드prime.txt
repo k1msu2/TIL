@@ -1,0 +1,45 @@
+int ch[30];
+struct Edge {
+	int e;
+	int val;
+	Edge(int a, int b) {
+		e = a;
+		val = b;
+	}
+	bool operator<(const Edge& b) const {
+		return val > b.val; // 최소힙
+	}
+};
+
+int main() {
+	priority_queue<Edge> Q;
+	vector<pair<int, int>> map[30];
+	int i, n, m, a, b, c, res = 0;
+	cin >> n >> m;
+	for (i = 1; i <= m; i++) {
+		cin >> a >> b >> c;
+		// 무방향 가중치 인접리스트
+		map[a].push_back(make_pair(b, c));
+		map[b].push_back(make_pair(a, c));
+	}
+
+	Q.push(Edge(1, 0));
+	while (!Q.empty()) {
+		Edge tmp = Q.top();
+		Q.pop();
+		int v = tmp.e;		 // 시작 정점 : 1
+		int cost = tmp.val;  // 시작 가중치 : 0
+		if (ch[v] == 0) { // 이미 트리에 있는 정점은 제외함
+			res += cost; // 가중치 최소비용의 누적값
+			ch[v] = 1;
+			for (i = 0; i < map[v].size(); i++) {
+				// 정점 v에서 갈수있는 모든 정점, 가중치를 push
+				// priority_queue 정렬됨
+				if (ch[map[v][i].first] == 0) // 지나갔던 정점인지 확인
+					Q.push(Edge(map[v][i].first, map[v][i].second));
+			}
+		}
+	}
+	cout << res;
+	return 0;
+}
