@@ -12,20 +12,26 @@
 <%
 	MemberVO vo = (MemberVO)request.getAttribute("membervo");
 %>
-<%if(vo != null){%>
+<%
+	if(vo != null){
+%>
 <ul>
-<li> 회원 이름 : <%=vo.getName() %></li>
-<li> 계정 : <%=vo.getId() %></li>
-<li> 암호 : <%=vo.getPasswd() %></li>
-<li> 전화번호 : <%=vo.getPhone() %></li>
+<li> 회원 이름 : <%=vo.getName()%></li>
+<li> 계정 : <%=vo.getId()%></li>
+<li> 암호 : <%=vo.getPasswd()%></li>
+<li> 전화번호 : <%=vo.getPhone()%></li>
 </ul>
-<%}else{%>
+<%
+	}else{
+%>
 	<h1>객체 없음</h1>
-<%}%>
+<%
+	}
+%>
 
 <hr>
 <h1>액션 태그 - java 코드 x</h1>
-<jsp:useBean id="memberVO" class="vo.MemberVO" scope="request"/>
+<jsp:useBean id="memberVO" class="com.miniproject.javas.vo.MemberVO" scope="request"/>
 <!--
 jsp:useBean
 jsp 에서 사용되는 class 를 Bean 이라고 한다.

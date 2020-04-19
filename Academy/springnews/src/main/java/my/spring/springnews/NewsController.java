@@ -128,8 +128,10 @@ public class NewsController {
 		int numPages = lsize % 5 == 0 ? lsize / 5 : lsize / 5 + 1;
 		mav.addObject("numPages", numPages);
 		mav.addObject("listAll", dao.paging(list, Integer.parseInt(page)));
+		mav.addObject("page", page);
 		mav.setViewName("news");
-		//mav.addObject("listAll", list);
+		
+		//mav.addObject("listAll", list);	
 		//mav.setViewName("news");
 		
 		return mav;
