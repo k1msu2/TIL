@@ -91,17 +91,17 @@ a{
 					<td width=400>
 					<c:choose>
 						<c:when test="${action eq 'search'}">
-							<a href="/springnews/news?action=search&subaction=read&newsid=${vo.id}&searchtype=${searchtype}&key=${key}&page=${page}">
+							<a href="/springnews/news?action=search&subaction=read&newsid=${vo.id}&searchtype=${searchtype}&key=${key}">
 								<c:out value="${vo.title}"/>
 							</a>
 						</c:when>
 						<c:when test="${action eq 'listwriter'}">
-							<a href="/springnews/news?action=listwriter&subaction=read&newsid=${vo.id}&writer=${writer}&page=${page}">
+							<a href="/springnews/news?action=listwriter&subaction=read&newsid=${vo.id}&writer=${writer}">
 								<c:out value="${vo.title}" />
 							</a>
 						</c:when>
 						<c:otherwise>
-							<a href="/springnews/news?action=read&newsid=${vo.id}&page=${page}">
+							<a href="/springnews/news?action=read&newsid=${vo.id}">
 								<c:out value="${vo.title}"/>
 							</a>
 						</c:otherwise>
@@ -140,7 +140,6 @@ a{
 		</select> <input id="key" type="text" name="key"> 
 		<input type="submit" value="뉴스찾기">
 		<button type="button" onclick="location.href='news'">뉴스 홈 </button>
-		<button type="button" onclick="location.href='news'">뉴스 홈 </button>
 	</form>
 	</div>
 	<br>
@@ -157,7 +156,7 @@ a{
 				<input id="news_id2" type="text" name="newsid" style="display: none"
 					value="${listOne.id}"> 
 				작성자 <input id="news_writer2" type="text" name="writer" value="${listOne.writer}"><br>
-				<br> 제목 <input id="news_title2" type="text" name="title" value="${listOne.title}"><br>
+				<br> 제목 <input id="news_title2" type="text" name="title" value="${listOne.title}" required><br> 
 				<br> 내용  <textarea id="news_content2" rows="3" cols="30" name="content">${listOne.content}</textarea>
 				<br>
 				<c:choose>
@@ -186,16 +185,11 @@ a{
 	</c:if>
 
 	<script>
-		// 게시판 페이지     <  1 2 3  >  
-		// 한 페이지 당 5 개의  글이 게시
-		
 		window.onload = function(){
 			for(var i = 1; i <= "${numPages}"; i++){
 				document.getElementById("pages").innerHTML += "<a href='/springnews/news?page=" + i + "'>"+ i + "</a>&nbsp&nbsp";				
 			}
 		};
-		
-		
 		function displayWriteForm() {
 			document.getElementById("news_form").style.display = "block";
 			document.getElementById("news_update").style.display = "none";

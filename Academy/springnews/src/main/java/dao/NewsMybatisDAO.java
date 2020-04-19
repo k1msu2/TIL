@@ -67,7 +67,6 @@ public class NewsMybatisDAO {
 			result = true;
 			System.out.println("count 증가함");
 		}
-		System.out.println("vo : " + vo);
 		if(result) return vo;
 		else return null;
 		
