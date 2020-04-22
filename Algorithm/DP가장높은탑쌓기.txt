@@ -1,0 +1,50 @@
+
+// 가장 높은 탑 쌓기
+struct Brick {
+	int s, h, w;
+	Brick(int a, int b, int c) {
+		s = a, h = b, w = c;
+	}
+	bool operator<(const Brick& b)const {
+		return s > b.s; // 내림차순
+		//s   : 앞자료
+		//b.s : 뒷자료
+	}
+};
+
+int main() {
+	ios_base::sync_with_stdio(false);
+	int n, a, b, c, max_h=0, res=0;
+	cin >> n;
+	vector<Brick> Bricks;
+	vector<int> dy(n, 0);
+
+	for (int i = 0; i < n; i++) {
+		cin >> a >> b >> c;
+		Bricks.push_back(Brick(a, b, c));
+	}
+
+	// 넓이를 내림차순으로 정렬하여
+	// 비교할 변수를 줄인다
+	sort(Bricks.begin(), Bricks.end());
+	dy[0] = Bricks[0].h;
+	res = dy[0];
+
+	for (int i = 1; i < n; i++) {
+		max_h = 0;
+		for (int j = i - 1; j >= 0; j--) {
+			if (Bricks[i].w < Bricks[j].w
+				&& max_h < dy[j]) {
+				max_h = dy[j];
+			}
+		}
+		dy[i] = max_h + Bricks[i].h;
+		// 저장된 dy중 가장 긴 것을 가져와서
+		// 현재 벽돌의 높이를 더한다.
+		if (res < dy[i]) res = dy[i];
+		//res = max(res, dy[i]);
+	}
+
+	cout << res;
+	return 0;
+}
